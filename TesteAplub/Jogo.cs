@@ -10,104 +10,104 @@ namespace TesteAplub
     {
         public string printJog;
         public string printComp;
-        public int opcaoJogador;
+
+        Jogador jog = new Jogador();
+
+        //Função que retorna um int entre 1 e 4 para ser a opção do computador
         static Random r = new Random();
         public int opcaoComp = r.Next(1, 4);
 
-
+        //Função que inicia o jogo
         public void inicia()
         {
-            /*if (opcaoComp == 4){
-            int opcaoComp = r.Next(1, 4);
-            }*/
 
             Console.WriteLine("Jokenpo");
             Console.WriteLine("Escolha a sua jogada!");
-            Console.WriteLine("1 - Pedra - 2 - Papel - 3 - Tesoura");
-            opcaoJogador = Console.Read();
+            Console.WriteLine("1 - Pedra\n2 - Papel\n3 - Tesoura\n");
+            jog.opcaoJogador = Console.Read();
 
-            if (opcaoJogador == 49)
+            //Formata a opção do usuário de ASCII para int
+            if (jog.opcaoJogador == 49)
             {
-                opcaoJogador = 1;
+                jog.opcaoJogador = 1;
             }
 
-            else if (opcaoJogador == 50)
+            else if (jog.opcaoJogador == 50)
             {
-                opcaoJogador = 2;
+                jog.opcaoJogador = 2;
             }
 
-            else if (opcaoJogador == 51)
+            else if (jog.opcaoJogador == 51)
             {
-                opcaoJogador = 3;
+                jog.opcaoJogador = 3;
             }
 
-            if (opcaoJogador == opcaoComp)
+            //Formata o texto para exibição
+            if (jog.opcaoJogador == 1)
             {
-                if(opcaoJogador == 1 || opcaoComp == 1)
-                {
-                    printJog = "pedra";
-                    printComp = "pedra";
-                }
+                printJog = "pedra";                
+            }
 
-                if (opcaoJogador == 2 || opcaoComp == 2)
-                {
-                    printJog = "papel";
-                    printComp = "papel";
-                }
+            else if (jog.opcaoJogador == 2)
+            {
+                printJog = "papel";                
+            }
 
-                if (opcaoJogador == 3 || opcaoComp == 3)
-                {
-                    printJog = "tesoura";
-                    printComp = "tesoura";
-                }
+            else if (jog.opcaoJogador == 3)
+            {
+                printJog = "tesoura";
+            }
+
+            if(opcaoComp == 1)
+            {
+                printComp = "pedra";
+            }
+            else if(opcaoComp == 2)
+            {
+                printComp = "papel";
+            }
+            else if (opcaoComp == 3)
+            {
+                printComp = "tesoura";
+            }
+
+            //Empate
+            if (jog.opcaoJogador == opcaoComp)
+            {
                 Console.WriteLine($"Jogo empatado! Você escolheu {printJog} e o computador escolheu {printComp}!");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
-                /*Console.WriteLine("Jogar Novamente? (S/N)");
-                char op = Console.ReadKey().KeyChar;
-                if (op == 's' || op == 'S')
-                {
-                    Console.Clear();
-                    inicia();
-                }*/
-
-            }
-            else if(opcaoJogador == 1 && opcaoComp == 3)
-            {
-                Console.WriteLine($"Jogador Venceu!\nPedra vence de Tesoura!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
-            }
-            else if (opcaoJogador == 3 && opcaoComp == 1)
-            {
-                Console.WriteLine($"Computador Venceu!\nPedra vence de Tesoura!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
-            }
-            else if (opcaoJogador == 2 && opcaoComp == 1)
-            {
-                Console.WriteLine($"Jogador Venceu!\nPapel vence de Pedra!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
-            }
-            else if (opcaoJogador == 1 && opcaoComp == 2)
-            {
-                Console.WriteLine($"Computador Venceu!\nPapel vence de Pedra!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
             }
 
-            else if (opcaoJogador == 3 && opcaoComp == 2)
+            //Resultados
+            else if (jog.opcaoJogador == 1 && opcaoComp == 3)
             {
-                Console.WriteLine($"Jogador Venceu!\nTesoura vence de Papel!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
+                Console.WriteLine($"Jogador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nPedra vence de Tesoura!");
+
             }
-            else if (opcaoJogador == 2 && opcaoComp == 3)
+            else if (jog.opcaoJogador == 3 && opcaoComp == 1)
             {
-                Console.WriteLine($"Computador Venceu!\nTesoura vence de Papel!\nJogador escolheu a opção {opcaoJogador} | Computador escolheu a opção {opcaoComp}");
-                Console.WriteLine("Pressione qualquer tecla para sair");
-                Console.ReadKey();
+                Console.WriteLine($"Computador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nPedra vence de Tesoura!");
+
+            }
+            else if (jog.opcaoJogador == 2 && opcaoComp == 1)
+            {
+                Console.WriteLine($"Jogador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nPapel vence de Pedra!");
+
+            }
+            else if (jog.opcaoJogador == 1 && opcaoComp == 2)
+            {
+                Console.WriteLine($"Computador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nPapel vence de Pedra!");
+
+            }
+
+            else if (jog.opcaoJogador == 3 && opcaoComp == 2)
+            {
+                Console.WriteLine($"Jogador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nTesoura vence de Papel!");
+
+            }
+            else if (jog.opcaoJogador == 2 && opcaoComp == 3)
+            {
+                Console.WriteLine($"Computador Venceu!\nJogador escolheu {printJog} | Computador escolheu {printComp}\nTesoura vence de Papel!");
+
             }
 
         }

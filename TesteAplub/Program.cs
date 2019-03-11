@@ -11,8 +11,11 @@ namespace TesteAplub
         static void Main(string[] args)
         {
             Jogo j = new Jogo();
-            
-                j.inicia();       
+
+            j.inicia();
+
+            Console.WriteLine("\nPressione qualquer tecla para sair");
+            Console.ReadKey();
 
         }
     }
