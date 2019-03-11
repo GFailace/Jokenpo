@@ -1,0 +1,7 @@
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\obj\Debug\TesteAplub.csprojAssemblyReference.cache
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\obj\Debug\TesteAplub.csproj.CoreCompileInputs.cache
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\bin\Debug\TesteAplub.exe.config
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\bin\Debug\TesteAplub.exe
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\bin\Debug\TesteAplub.pdb
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\obj\Debug\TesteAplub.exe
+C:\Users\GFCunha\source\repos\TesteAplub\TesteAplub\obj\Debug\TesteAplub.pdb
